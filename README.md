@@ -61,10 +61,8 @@ The main goal was to understand how developers work with APIs:
 ### API Directory
 
 ![API Directory](./screenshots/api-directory.png)
+<img width="652" height="219" alt="image" src="https://github.com/user-attachments/assets/e50755b1-58aa-4f70-8de0-7cbc973c323b" />
 
-### API Documentation & Playground
-
-![API Documentation and Playground](./screenshots/api-documentation.png)
 
 ## How It Works
 
