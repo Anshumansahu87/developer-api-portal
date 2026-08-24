@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random User API | DevAPI Hub</title><link rel="stylesheet" href="../style.css"></head>
+<body>
+<nav class="nav"><a class="brand" href="../index.html"><span>Dev</span>API Hub</a><a href="../index.html#apis">Explore APIs</a></nav>
+<main class="doc-wrap">
+<a class="back" href="../index.html">← Back to API directory</a>
+<section class="doc-card">
+<p class="eyebrow">DEMO API</p>
+<h1 class="doc-title">Random User API</h1><p class="doc-sub">Generate random user profiles for prototypes and demos.</p>
+<div class="doc-section"><h2>Request</h2><div class="endpoint">GET https://randomuser.me/api/</div></div>
+<div class="doc-section"><h2>Authentication</h2><p>None</p></div>
+<div class="doc-section"><h2>Parameters</h2>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td colspan='3'>No parameters required.</td></tr></tbody></table></div>
+<div class="doc-section"><h2>Example request</h2><pre>GET https://randomuser.me/api/</pre></div>
+<div class="doc-section"><h2>Example response</h2><pre>{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "first": "John",
+        "last": "Doe"
+      }
+    }
+  ]
+}</pre></div>
+<div class="actions"><a class="btn primary" href="https://randomuser.me/" target="_blank">Official documentation ↗</a><button class="btn secondary" onclick="navigator.clipboard.writeText(document.querySelector('.endpoint').textContent)">Copy endpoint</button></div>
+</section>
+
+<section class="doc-card playground">
+<p class="eyebrow">PLAYGROUND</p>
+<h2>Test this endpoint</h2>
+<p class="doc-sub">Send a GET request and inspect the JSON response.</p>
+<div class="play-input">
+<input id="endpointInput" value="https://randomuser.me/api/">
+<button class="btn primary" onclick="runRequest()">Send request</button>
+</div>
+<p id="status" class="status">Ready.</p>
+<pre id="output">Response will appear here.</pre>
+</section>
+<script>
+async function runRequest(){
+ const url=document.getElementById("endpointInput").value.trim();
+ const status=document.getElementById("status"), output=document.getElementById("output");
+ status.textContent="Sending request...";
+ output.textContent="";
+ try{
+   const r=await fetch(url);
+   if(!r.ok) throw new Error("HTTP "+r.status);
+   const data=await r.json();
+   status.textContent="Success • HTTP "+r.status;
+   output.textContent=JSON.stringify(data,null,2);
+ }catch(err){
+   status.textContent="Request could not be completed.";
+   output.textContent=err.message+"\n\nThe API may require authentication, block browser requests (CORS), or be temporarily unavailable.";
+ }
+}
+</script>
+</main>
+</body></html>

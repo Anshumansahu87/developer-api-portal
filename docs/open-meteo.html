@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open-Meteo | DevAPI Hub</title><link rel="stylesheet" href="../style.css"></head>
+<body>
+<nav class="nav"><a class="brand" href="../index.html"><span>Dev</span>API Hub</a><a href="../index.html#apis">Explore APIs</a></nav>
+<main class="doc-wrap">
+<a class="back" href="../index.html">← Back to API directory</a>
+<section class="doc-card">
+<p class="eyebrow">WEATHER API</p>
+<h1 class="doc-title">Open-Meteo</h1><p class="doc-sub">Weather forecasts and current weather data without an API key.</p>
+<div class="doc-section"><h2>Request</h2><div class="endpoint">GET https://api.open-meteo.com/v1/forecast?latitude=22.80&longitude=86.20&current=temperature_2m,wind_speed_10m</div></div>
+<div class="doc-section"><h2>Authentication</h2><p>None</p></div>
+<div class="doc-section"><h2>Parameters</h2>
+<table><thead><tr><th>Name</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td>latitude</td><td>number</td><td>Latitude of the location</td></tr><tr><td>longitude</td><td>number</td><td>Longitude of the location</td></tr><tr><td>current</td><td>string</td><td>Current weather variables</td></tr></tbody></table></div>
+<div class="doc-section"><h2>Example request</h2><pre>GET https://api.open-meteo.com/v1/forecast?latitude=22.80&longitude=86.20&current=temperature_2m,wind_speed_10m</pre></div>
+<div class="doc-section"><h2>Example response</h2><pre>{
+  "latitude": 22.8,
+  "longitude": 86.2,
+  "current": {
+    "temperature_2m": 28.4,
+    "wind_speed_10m": 12.1
+  }
+}</pre></div>
+<div class="actions"><a class="btn primary" href="https://open-meteo.com/en/docs" target="_blank">Official documentation ↗</a><button class="btn secondary" onclick="navigator.clipboard.writeText(document.querySelector('.endpoint').textContent)">Copy endpoint</button></div>
+</section>
+
+<section class="doc-card playground">
+<p class="eyebrow">PLAYGROUND</p>
+<h2>Test this endpoint</h2>
+<p class="doc-sub">Send a GET request and inspect the JSON response.</p>
+<div class="play-input">
+<input id="endpointInput" value="https://api.open-meteo.com/v1/forecast?latitude=22.80&longitude=86.20&current=temperature_2m,wind_speed_10m">
+<button class="btn primary" onclick="runRequest()">Send request</button>
+</div>
+<p id="status" class="status">Ready.</p>
+<pre id="output">Response will appear here.</pre>
+</section>
+<script>
+async function runRequest(){
+ const url=document.getElementById("endpointInput").value.trim();
+ const status=document.getElementById("status"), output=document.getElementById("output");
+ status.textContent="Sending request...";
+ output.textContent="";
+ try{
+   const r=await fetch(url);
+   if(!r.ok) throw new Error("HTTP "+r.status);
+   const data=await r.json();
+   status.textContent="Success • HTTP "+r.status;
+   output.textContent=JSON.stringify(data,null,2);
+ }catch(err){
+   status.textContent="Request could not be completed.";
+   output.textContent=err.message+"\n\nThe API may require authentication, block browser requests (CORS), or be temporarily unavailable.";
+ }
+}
+</script>
+</main>
+</body></html>
