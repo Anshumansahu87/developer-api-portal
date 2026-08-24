@@ -1,25 +1,62 @@
 # DevAPI Hub
 
-> A developer-focused API discovery, documentation and testing portal.
+> A developer-focused API discovery, documentation and testing portal built with HTML, CSS and JavaScript.
 
-## Why I built this
+## Overview
 
-I wanted to build a small project that combines frontend development with practical API usage. Instead of only displaying API names, I created documentation pages where developers can understand an endpoint, its parameters, authentication requirements, example requests, and responses.
+DevAPI Hub is a simple developer portal that helps developers discover useful public APIs, explore their documentation, understand endpoints and parameters, and test GET APIs directly from the browser.
+
+The project was built to practice frontend development, REST API integration, technical documentation, and developer-focused user experience.
+
+## Why I Built This
+
+I wanted to build a practical project that goes beyond a normal frontend website.
+
+While working on this project, I focused on understanding how developers actually use APIs:
+
+- Finding an API
+- Understanding its endpoint
+- Checking the HTTP method
+- Understanding parameters
+- Checking authentication requirements
+- Reading example responses
+- Testing an API request
+- Handling failed requests
+
+This helped me combine frontend development with practical REST API usage.
 
 ## Features
 
-* API directory with 8 curated APIs
-* Search by name, category and description
-* Category filtering
-* Individual API documentation pages
-* HTTP method and authentication information
-* Parameters table
-* Example requests and JSON responses
-* Official documentation links
-* Browser-based GET API playground
-* Basic request error handling
-* Responsive design
-* Copy endpoint functionality
+- 🔎 Search APIs by name, category and description
+- 🗂️ Filter APIs by category
+- 📚 Individual documentation page for each API
+- 🔗 API endpoint information
+- 📡 HTTP method information
+- 🔐 Authentication information
+- 📋 Parameters table
+- 💻 Example API requests
+- 📦 Example JSON responses
+- 🌐 Links to official API documentation
+- 🧪 Browser-based GET API playground
+- ⚠️ Basic API error handling
+- 📋 Copy endpoint functionality
+- 📱 Responsive design
+- 🧑‍💻 Developer-focused interface
+
+## APIs Included
+
+The project currently includes 8 public APIs:
+
+| API | Category | Method | Authentication |
+|---|---|---|---|
+| Open-Meteo | Weather | GET | None |
+| GitHub REST API | Developer | GET | Public endpoints |
+| ExchangeRate API | Finance | GET | None for open endpoint |
+| JSONPlaceholder | Developer | GET | None |
+| Cat Facts | Fun | GET | None |
+| Universities API | Education | GET | None |
+| Random User API | Demo | GET | None |
+| REST Countries | Public Data | GET | None |
 
 ## Screenshots
 
@@ -35,83 +72,50 @@ I wanted to build a small project that combines frontend development with practi
 
 ![API Documentation and Playground](screenshots/api-documentation.png)
 
-## Tech Stack
+## How It Works
 
-* HTML5
-* CSS3
-* Vanilla JavaScript
-* REST APIs
-* Fetch API
-* Git & GitHub
+The application is built using vanilla JavaScript.
 
-## How it works
+The API information is stored as JavaScript objects. The homepage reads this data and dynamically creates API cards.
 
-API information is stored as JavaScript objects. The homepage uses JavaScript to search and filter the API data and dynamically create API cards.
+When a user searches for an API, JavaScript filters the API list based on:
 
-Each API card opens its own documentation page containing the endpoint, HTTP method, authentication information, parameters, example request and example response.
+- API name
+- Category
+- Description
 
-For GET APIs, the playground uses the JavaScript Fetch API to send a request and display the returned JSON response directly in the browser.
+Each API card links to its own documentation page.
 
-## Run locally
+The documentation page contains:
 
-1. Clone this repository.
-2. Open the project folder in VS Code.
-3. Install the Live Server extension.
-4. Open `index.html` with Live Server.
-5. Explore the API directory and documentation pages.
+- API description
+- HTTP method
+- Endpoint
+- Authentication
+- Parameters
+- Example request
+- Example response
+- Official documentation link
 
-## Project Structure
+For GET APIs, the API playground uses the browser Fetch API to send a request and display the returned JSON response.
+
+## API Request Flow
 
 ```text
-developer-api-portal/
-├── index.html
-├── style.css
-├── script.js
-├── data.json
-├── README.md
-├── .gitignore
-├── screenshots/
-│   ├── homepage.png
-│   ├── api-directory.png
-│   └── api-documentation.png
-└── docs/
-    ├── open-meteo.html
-    ├── github.html
-    ├── exchange-rate.html
-    ├── jsonplaceholder.html
-    ├── cat-facts.html
-    ├── universities.html
-    ├── random-user.html
-    └── rest-countries.html
-```
-
-## Challenges
-
-### API errors and browser restrictions
-
-Some public APIs require authentication or restrict browser-side requests because of CORS. I added basic error handling in the API playground so failed requests show a useful message instead of breaking the page.
-
-### Keeping documentation readable
-
-Instead of putting every API on one large documentation page, I created a separate documentation page for each API. This makes the information easier for developers to navigate and understand.
-
-### Handling API responses
-
-The playground checks the HTTP response and converts successful responses into readable JSON before displaying them to the user.
-
-## Future Improvements
-
-* OpenAPI/Swagger import
-* API authentication examples
-* POST/PUT/DELETE playground support
-* Favorites and recently viewed APIs
-* API submission form
-* Request history
-* API response formatting
-* Public deployment
-
-## Author
-
-**Anshuman Sahu**
-
-Built as a portfolio project to practice frontend development, REST APIs, API documentation and developer-focused user experience.
+User
+  ↓
+DevAPI Hub
+  ↓
+Select API
+  ↓
+Read Documentation
+  ↓
+Enter / View Endpoint
+  ↓
+Fetch API Request
+  ↓
+API Server
+  ↓
+JSON Response
+  ↓
+Display Response
