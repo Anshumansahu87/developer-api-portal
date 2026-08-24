@@ -4,30 +4,32 @@
 
 ## Overview
 
-DevAPI Hub is a simple developer portal that helps developers discover useful public APIs, explore their documentation, understand endpoints and parameters, and test GET APIs directly from the browser.
+DevAPI Hub is a simple web-based API discovery portal that helps developers find useful public APIs, explore their documentation, understand API endpoints, and test GET requests directly from the browser.
 
-I built this project to practice frontend development, REST API integration, technical documentation, and developer-focused user experience.
+The project combines frontend development, REST API integration, API documentation, and developer-focused user experience in one application.
 
 ## Why I Built This
 
-I wanted to build a practical project that goes beyond a normal frontend website.
+I wanted to build a practical project where I could learn how APIs are used from a developer's point of view.
 
-The main goal was to understand how developers work with APIs:
+Instead of only listing API names, I created documentation pages that provide the information a developer needs before using an API:
 
-- Finding an API
-- Understanding its endpoint
-- Checking the HTTP method
-- Understanding parameters
-- Checking authentication requirements
-- Reading example responses
-- Testing API requests
-- Handling failed requests
+- API endpoint
+- HTTP method
+- Authentication
+- Parameters
+- Example request
+- Example response
+- Official documentation
+
+I also added a small API playground so developers can test GET endpoints directly from the browser.
 
 ## Features
 
-- Search APIs by name, category and description
+- Search APIs by name, category, or description
 - Filter APIs by category
-- Individual documentation pages
+- Browse 8 curated public APIs
+- Individual API documentation pages
 - HTTP method information
 - Authentication information
 - Parameters table
@@ -35,6 +37,8 @@ The main goal was to understand how developers work with APIs:
 - Example JSON responses
 - Official documentation links
 - Browser-based GET API playground
+- HTTP status display
+- JSON response viewer
 - Basic API error handling
 - Copy endpoint functionality
 - Responsive design
@@ -59,24 +63,29 @@ The main goal was to understand how developers work with APIs:
 ![DevAPI Hub Homepage](./screenshots/homepage.png)
 
 ### API Directory
-### API Directory
 
 ![API Directory](./screenshots/api-directory.png)
 
+### API Documentation & Playground
 
+![API Documentation and Playground](./screenshots/api-documentation.png)
 
 ## How It Works
 
 The API information is stored as JavaScript objects.
 
-The homepage uses JavaScript to:
+The homepage uses JavaScript to dynamically display API cards.
 
-1. Display API cards dynamically.
-2. Search APIs by name, category and description.
-3. Filter APIs by category.
-4. Open individual documentation pages.
+Users can:
 
-Each documentation page contains:
+1. Search for an API.
+2. Filter APIs by category.
+3. Open an API documentation page.
+4. Read the endpoint and usage information.
+5. Test a GET endpoint using the API playground.
+6. View the returned JSON response.
+
+Each API documentation page contains:
 
 - API description
 - HTTP method
@@ -87,25 +96,31 @@ Each documentation page contains:
 - Example response
 - Official documentation link
 
-The API playground uses the JavaScript Fetch API to send GET requests and display JSON responses directly in the browser.
-
 ## API Request Flow
 
 ```text
 User
-  ↓
+  |
+  v
 DevAPI Hub
-  ↓
-Select API
-  ↓
+  |
+  v
+Select an API
+  |
+  v
 Read Documentation
-  ↓
+  |
+  v
 API Endpoint
-  ↓
-Fetch API Request
-  ↓
+  |
+  v
+Fetch GET Request
+  |
+  v
 API Server
-  ↓
+  |
+  v
 JSON Response
-  ↓
+  |
+  v
 Display Response
