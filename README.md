@@ -6,13 +6,13 @@
 
 DevAPI Hub is a simple developer portal that helps developers discover useful public APIs, explore their documentation, understand endpoints and parameters, and test GET APIs directly from the browser.
 
-The project was built to practice frontend development, REST API integration, technical documentation, and developer-focused user experience.
+I built this project to practice frontend development, REST API integration, technical documentation, and developer-focused user experience.
 
 ## Why I Built This
 
 I wanted to build a practical project that goes beyond a normal frontend website.
 
-While working on this project, I focused on understanding how developers actually use APIs:
+The main goal was to understand how developers work with APIs:
 
 - Finding an API
 - Understanding its endpoint
@@ -20,32 +20,26 @@ While working on this project, I focused on understanding how developers actuall
 - Understanding parameters
 - Checking authentication requirements
 - Reading example responses
-- Testing an API request
+- Testing API requests
 - Handling failed requests
-
-This helped me combine frontend development with practical REST API usage.
 
 ## Features
 
-- 🔎 Search APIs by name, category and description
-- 🗂️ Filter APIs by category
-- 📚 Individual documentation page for each API
-- 🔗 API endpoint information
-- 📡 HTTP method information
-- 🔐 Authentication information
-- 📋 Parameters table
-- 💻 Example API requests
-- 📦 Example JSON responses
-- 🌐 Links to official API documentation
-- 🧪 Browser-based GET API playground
-- ⚠️ Basic API error handling
-- 📋 Copy endpoint functionality
-- 📱 Responsive design
-- 🧑‍💻 Developer-focused interface
+- Search APIs by name, category and description
+- Filter APIs by category
+- Individual documentation pages
+- HTTP method information
+- Authentication information
+- Parameters table
+- Example API requests
+- Example JSON responses
+- Official documentation links
+- Browser-based GET API playground
+- Basic API error handling
+- Copy endpoint functionality
+- Responsive design
 
 ## APIs Included
-
-The project currently includes 8 public APIs:
 
 | API | Category | Method | Authentication |
 |---|---|---|---|
@@ -62,31 +56,28 @@ The project currently includes 8 public APIs:
 
 ### Homepage
 
-![DevAPI Hub Homepage](screenshots/homepage.png)
+![DevAPI Hub Homepage](./screenshots/homepage.png)
 
 ### API Directory
 
-![API Directory](screenshots/api-directory.png)
+![API Directory](./screenshots/api-directory.png)
 
 ### API Documentation & Playground
 
-![API Documentation and Playground](screenshots/api-documentation.png)
+![API Documentation and Playground](./screenshots/api-documentation.png)
 
 ## How It Works
 
-The application is built using vanilla JavaScript.
+The API information is stored as JavaScript objects.
 
-The API information is stored as JavaScript objects. The homepage reads this data and dynamically creates API cards.
+The homepage uses JavaScript to:
 
-When a user searches for an API, JavaScript filters the API list based on:
+1. Display API cards dynamically.
+2. Search APIs by name, category and description.
+3. Filter APIs by category.
+4. Open individual documentation pages.
 
-- API name
-- Category
-- Description
-
-Each API card links to its own documentation page.
-
-The documentation page contains:
+Each documentation page contains:
 
 - API description
 - HTTP method
@@ -97,7 +88,7 @@ The documentation page contains:
 - Example response
 - Official documentation link
 
-For GET APIs, the API playground uses the browser Fetch API to send a request and display the returned JSON response.
+The API playground uses the JavaScript Fetch API to send GET requests and display JSON responses directly in the browser.
 
 ## API Request Flow
 
@@ -110,7 +101,7 @@ Select API
   ↓
 Read Documentation
   ↓
-Enter / View Endpoint
+API Endpoint
   ↓
 Fetch API Request
   ↓
