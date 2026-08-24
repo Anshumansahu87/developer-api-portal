@@ -1,6 +1,12 @@
 # DevAPI Hub
 
 > A developer-focused API discovery, documentation and testing portal built with HTML, CSS and JavaScript.
+>
+> ![HTML5](https://img.shields.io/badge/HTML5-Structure-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-Logic-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![REST APIs](https://img.shields.io/badge/REST_APIs-Integration-005571?style=flat-square&logo=postman&logoColor=white)
+![Fetch API](https://img.shields.io/badge/Fetch_API-Playground-4B32C3?style=flat-square)
 
 ## Overview
 
